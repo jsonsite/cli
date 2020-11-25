@@ -2,3 +2,4 @@ site.json
 .glitch-assets
 .env
 .config
+output.html

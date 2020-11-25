@@ -36,27 +36,26 @@ var template = request(
   .getBody()
   .toString();
 console.log("Reading JSON data from " + program.input);
-var json = JSON.parse(fs.readFileSync(program.input, "utf8"));
+var json = JSON.parse(fs.readFileSync(__dirname + "/" + program.input, "utf8"));
 var y = 0;
 while (y < json.pages.length) {
   json.pages[y].content = md.render(json.pages[y].content);
   y++;
 }
 var output = program.output;
-nunjucks.configure({ autoescape: true });
 json = Object.assign(json, {
   siimple: fs.readFileSync("node_modules/siimple/dist/siimple.min.css", "utf8")
 });
 console.log("Rendering the site...");
 var res = nunjucks.renderString(template, json);
 res = minify(res, {
-    useShortDoctype: true,
-    removeComments: true,
-    collapseWhitespace: true,
-    minifyJS: true,
-    minifyCSS: true
-  });
+  useShortDoctype: true,
+  removeComments: true,
+  collapseWhitespace: true,
+  minifyJS: true,
+  minifyCSS: true
+});
 console.log(res);
 
-fs.writeFileSync(program.output, res);
-console.log("Done!")
+fs.writeFileSync(__dirname + "/" + program.output, res);
+console.log("Done!");
