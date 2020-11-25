@@ -10,7 +10,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sync-request": "^6.1.0",
+    "commander": "^6.2.0"
   },
   "engines": {
     "node": "12.x"
