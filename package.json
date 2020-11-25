@@ -1,13 +1,10 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "jsonsite",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "description": "Turns a JSON file into a website. Uses the same rendering engine as github.com/jsonsite/jsonsite",
+  "main": "cli.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "echo \"No start needed!\""
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -21,13 +18,18 @@
   "engines": {
     "node": "12.x"
   },
+  "bin": {
+    "jsonsite": "./cli.js"
+  },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "url": "https://glitch.com/edit/#!/jsonsite-cli"
   },
   "license": "MIT",
   "keywords": [
     "node",
     "glitch",
-    "express"
+    "nunjucks",
+    "json",
+    "markdown"
   ]
 }

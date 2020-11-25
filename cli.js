@@ -49,6 +49,13 @@ json = Object.assign(json, {
 });
 console.log("Rendering the site...");
 var res = nunjucks.renderString(template, json);
+res = minify(res, {
+    useShortDoctype: true,
+    removeComments: true,
+    collapseWhitespace: true,
+    minifyJS: true,
+    minifyCSS: true
+  });
 console.log(res);
 
 fs.writeFileSync(program.output, res);
