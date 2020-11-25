@@ -13,4 +13,6 @@ jsonsite -i site.json -o output.html -t default.njk
 ```
 - The `-i` flag the input JSON file. It is not a URL, rather a local file, unlike the regular version which uses a URL. Defaults to `site.json`
 - The `-o` flag is the output HTML file. JSONsite will save your SPA to the specified file. Defults to `output.html`
-- The `-t` flag mean
+- The `-t` flag is the template file. If the template file specified is `default.njk`, then it will get the template from `http://jsonsite.github.io/templates/default.njk`. You can submit a template [here](https://github.com/jsonsite/templates).
+
+If you want to view this anytime, you can run `jsonsite -h`.

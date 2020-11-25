@@ -1,6 +1,6 @@
 {
   "name": "jsonsite",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Turns a JSON file into a website. Uses the same rendering engine as github.com/jsonsite/jsonsite",
   "main": "cli.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "jsonsite": "./cli.js"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/jsonsite-cli"
+    "url": "https://github.com/jsonsite/cli"
   },
   "license": "MIT",
   "keywords": [
