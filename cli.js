@@ -55,7 +55,7 @@ res = minify(res, {
   minifyJS: true,
   minifyCSS: true
 });
-console.log(res);
+
 
 fs.writeFileSync(program.output, res);
 console.log("Done!");
