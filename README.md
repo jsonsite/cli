@@ -4,7 +4,7 @@ The CLI version of JSONsite.
 
 If you want to know more about [JSONsite](https://jsonsite.vercel.app/), please see the [GitHub repo](https://github.com/jsonsite#readme).
 
-This is the **CLI** version, **NOT** the main version. The CLI version just turns a JSON file into a HTML file, but does not host it like the regular version.
+This 
 
 ## Installation
 
@@ -17,7 +17,9 @@ jsonsite-gen will give you a sample JSON site for you. Example:
 ```
 jsonsite-gen
 ```
-Really, thats 
+Really, thats it, just answer the prompts. Then host the output file on something like GitHub Gists, then look at [CONTRIBUTING.md](https://github.com/jsonsite/jsonsite/blob/main/CONTRIBUTING.md) on how to add the JSON to the registry
+
+jsonsite-local will generate the HTML file locally, but it does not come with stuff like the service workers, caching, etc.
 ```
 jsonsite-local -i site.json -o output.html -t default.njk
 ```

@@ -19,8 +19,8 @@
     "node": "12.x"
   },
   "bin": {
-    "jsonsite-local": "./localgen.js",
-    "jsonsite-gen": "./localgen.js"
+    "jsonsite-local": "./cli-local.js",
+    "jsonsite-gen": "./cli-gen.js"
   },
   "repository": {
     "url": "https://github.com/jsonsite/cli"
