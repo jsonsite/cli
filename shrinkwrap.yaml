@@ -1,5 +1,6 @@
 dependencies:
   commander: 6.2.0
+  enquirer: 2.3.6
   express: 4.17.1
   html-minifier: 4.0.0
   markdown-it: 12.0.2
@@ -48,6 +49,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-Il80Qs2WjYlJIBNzNkK6KYqlVMTbZLXgHx2oT0pU/fjRHyEp+PEfEPY0R3WCwAGVOtauxh1hOxNgIf5bv7dQpA==
+  /ansi-colors/4.1.1:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==
   /anymatch/3.1.1:
     dependencies:
       normalize-path: 3.0.0
@@ -248,6 +255,14 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
+  /enquirer/2.3.6:
+    dependencies:
+      ansi-colors: 4.1.1
+    dev: false
+    engines:
+      node: '>=8.6'
+    resolution:
+      integrity: sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==
   /entities/2.0.3:
     dev: false
     resolution:
@@ -882,6 +897,7 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   commander: ^6.2.0
+  enquirer: ^2.3.6
   express: ^4.17.1
   html-minifier: ^4.0.0
   markdown-it: ^12.0.1
