@@ -2,6 +2,7 @@ const { prompt } = require("enquirer");
 
 (async () => {
   var validator = require("validator");
+  const fs = require("fs");
   const response = await prompt([
     {
       type: "input",
@@ -18,7 +19,7 @@ const { prompt } = require("enquirer");
     {
       type: "input",
       name: "image",
-      message: "Would you like to provide a image? You don't have to though.",
+      message: "Would you like to provide a image? (Leave blank for no image)",
       validate(value, state, item, index) {
         if (!validator.isURL(value) && value !== "") {
           return false;
@@ -40,7 +41,7 @@ const { prompt } = require("enquirer");
         "Would you like to add a footer? Something like 'Copyright name, 2020'"
     }
   ]);
- 
+
   var res = response;
   res.pages = [
     {
@@ -51,8 +52,17 @@ const { prompt } = require("enquirer");
       You might wanna see some examples at jsonsite.now.sh/sites/`
     }
   ];
-  if (res.footer == ""){
-    res.footer = `&copy; ${new Date().getFullYear()} ${res.author}. All rights reserved.`
+  if (res.footer == "") {
+    res.footer = `&copy; ${new Date().getFullYear()} ${
+      res.author
+    }. All rights reserved.`;
   }
-  console.log(res)
+  res = JSON.stringify(res);
+  fs.writeFileSync("site.json", res);
+  console.log(
+    "✔ Ok, Your JSONsite has been saved to site.json. Further configuration is required however."
+  );
+  console.log(
+    "To finish setting up your site, You might wanna see some examples at jsonsite.now.sh/sites/ and learn how to submit it at git.io/JkHXo"
+  );
 })();
