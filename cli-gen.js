@@ -1,7 +1,7 @@
 const { prompt } = require("enquirer");
 
 (async () => {
-  var validator = require('validator')
+  var validator = require("validator");
   const response = await prompt([
     {
       type: "input",
@@ -18,11 +18,12 @@ const { prompt } = require("enquirer");
     {
       type: "input",
       name: "image",
-      message: "Would you like to provide a image? You don't have to though.",validate(value, state, item, index) {
-        if(!validator.isURL(value)){
-          return false
+      message: "Would you like to provide a image? You don't have to though.",
+      validate(value, state, item, index) {
+        if (!validator.isURL(value) && value !== "") {
+          return false;
         } else {
-          return true
+          return true;
         }
       }
     },
@@ -35,8 +36,23 @@ const { prompt } = require("enquirer");
     {
       type: "input",
       name: "footer",
-      message: "Would you like to add a footer? Something like 'Copyright name, 2020'"
+      message:
+        "Would you like to add a footer? Something like 'Copyright name, 2020'"
     }
   ]);
-  console.log(response);
+ 
+  var res = response;
+  res.pages = [
+    {
+      title: "Main",
+      id: "main",
+      content: `Welcome to the website of **${res.author}!** If you are seeing this, congraulations! 
+      You now have a valid JSONsite! Further configuration is required however. To finish setting up your site, 
+      You might wanna see some examples at jsonsite.now.sh/sites/`
+    }
+  ];
+  if (res.footer == ""){
+    res.footer = `&copy; ${new Date().getFullYear()} ${res.author}. All rights reserved.`
+  }
+  console.log(res)
 })();
