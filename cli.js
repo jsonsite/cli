@@ -36,7 +36,7 @@ var template = request(
   .getBody()
   .toString();
 console.log("Reading JSON data from " + program.input);
-var json = JSON.parse(fs.readFileSync(__dirname + "/" + program.input, "utf8"));
+var json = JSON.parse(fs.readFileSync(program.input, "utf8"));
 var y = 0;
 while (y < json.pages.length) {
   json.pages[y].content = md.render(json.pages[y].content);
@@ -57,5 +57,5 @@ res = minify(res, {
 });
 console.log(res);
 
-fs.writeFileSync(__dirname + "/" + program.output, res);
+fs.writeFileSync(program.output, res);
 console.log("Done!");
