@@ -10,10 +10,16 @@ This is the **CLI** version, **NOT** the main version. The CLI version just turn
 
 `npm i jsonsite -g`
 
-### Example:
+### Commands
+As of 1.2.0, The jsonsite package has been split into two commands: jsonsite-gen and jsonsite-local.
 
+jsonsite-gen will give you a sample JSON site for you. Example:
 ```
-jsonsite -i site.json -o output.html -t default.njk
+jsonsite-gen
+```
+Really, thats 
+```
+jsonsite-local -i site.json -o output.html -t default.njk
 ```
 - The `-i` flag the input JSON file. It is not a URL, rather a local file, unlike the regular version which uses a URL. Defaults to `site.json`
 - The `-o` flag is the output HTML file. JSONsite will save your SPA to the specified file. Defults to `output.html`
