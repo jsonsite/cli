@@ -6,6 +6,10 @@ If you want to know more about [JSONsite](https://jsonsite.vercel.app/), please 
 
 This is the **CLI** version, **NOT** the main version. The CLI version just turns a JSON file into a HTML file, but does not host it like the regular version.
 
+## Installation
+
+`npm i jsonsite -g`
+
 ### Example:
 
 ```
