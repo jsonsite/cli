@@ -20,7 +20,7 @@ jsonsite-gen will give you a sample JSON site for you. Example:
 jsonsite-gen
 ```
 
-Really, thats it, just answer the prompts. Configure your JSON file after the prompts are done and then host the output file on something like GitHub Gists, then look at [CONTRIBUTING.md](https://github.com/jsonsite/jsonsite/blob/main/CONTRIBUTING.md) on how to add the JSON to the registry
+Really, that's it, just answer the prompts. Configure your JSON file after the prompts are done and then host the output file on something like GitHub Gists, then look at [CONTRIBUTING.md](https://github.com/jsonsite/jsonsite/blob/main/CONTRIBUTING.md) on how to add the JSON to the registry
 
 jsonsite-local will generate the HTML file locally, but it does not come with stuff like the service workers, caching, etc.
 
@@ -29,7 +29,7 @@ jsonsite-local -i site.json -o output.html -t default.njk
 ```
 
 - The `-i` flag the input JSON file. It is not a URL, rather a local file, unlike the regular version which uses a URL. Defaults to `site.json`
-- The `-o` flag is the output HTML file. JSONsite will save your SPA to the specified file. Defults to `output.html`
+- The `-o` flag is the output HTML file. JSONsite will save your SPA to the specified file. Defaults to `output.html`
 - The `-t` flag is the template file. If the template file specified is `default.njk`, then it will get the template from `http://jsonsite.github.io/templates/default.njk`. You can submit a template [here](https://github.com/jsonsite/templates).
 
 If you want to view this anytime, you can run `jsonsite -h`.
